@@ -30,17 +30,9 @@ int	print_string(va_list args)
 }
 
 /**
- * print_float- function that print a 
-*/
-int	print_dec(va_list args)
-{
-	int	r;
-	
-	r = va_arg(args, int);
-}
-
-/**
  * print_integer - function that print a integer
+ * 
+ * Return: size of the fucntion, otherwise 1
 */
 int	print_integer(va_list args)
 {
@@ -87,4 +79,3 @@ int	print_mod(va_list args)
 	_putchar('%');
 	return (1);
 }
-
