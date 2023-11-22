@@ -15,7 +15,7 @@ int	(*print_format(const char *format))(va_list)
 			{'%', print_mod},
 			{'d', print_integer},
 			{'i', print_integer},
-			{NULL, NULL},
+			{'\0', NULL}
 		};
 
 	for (index = 0; ft[index].e; index++)
