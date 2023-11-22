@@ -4,11 +4,14 @@
  * print_char - function that print a character
  * @args: argument
  * 
- * Return: 1
+ * Return: 1 on success
 */
 int	print_char(va_list args)
 {
-	_putchar(va_arg(args, int));
+	char	c;
+
+	c = va_arg(args, int);
+	_putchar(c);
 	return (1);
 }
 
@@ -26,6 +29,7 @@ int	print_string(va_list args)
 	char *s;
 
 	s = va_arg(args, char *);
+
 	if (s == NULL)
 		s = "(null)";
 
@@ -38,7 +42,7 @@ int	print_string(va_list args)
  * print_integer - function that print a integer
  * Description : this function print digit wither its a int or decimal
  * 		its take a argument as parameter
- * @args : argument
+ * @args : argument, number to print
  * 
  * Return: size of the fucntion, otherwise 1§
 */
