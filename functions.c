@@ -27,7 +27,8 @@ int	print_string(va_list args)
 
 	s = va_arg(args, char *);
 	if (s == NULL)
-		return (0); 
+		s = "(null)";
+
 	for (i = 0; s[i]; i++)
 		_putchar(s[i]);
 	return(i);
@@ -79,7 +80,7 @@ int	print_integer(va_list args)
 }
 
 /**
- * _pour100 - function that print character '%'
+ * print_mod - function that print character '%'
  * @args : given arguments
  * 
  * Return: character '%'
@@ -87,6 +88,5 @@ int	print_integer(va_list args)
 int	print_mod(va_list args)
 {
 	(void)args;
-	_putchar('%');
-	return (1);
+	return (_putchar('%'));
 }
