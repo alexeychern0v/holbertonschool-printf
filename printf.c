@@ -13,15 +13,12 @@ int	_printf(const char *format, ...)
 	va_list	args;
 	int	(*f)(va_list);
 
+	va_start(args, format);
+
 	i = 0;
 	length = 0;
-
-	va_start(args, format);
 	if (format == NULL)
-	{
 		return (-1);
-	}
-
 	while (format && format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
@@ -34,12 +31,10 @@ int	_printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);
-			length++;
+			length += _putchar(format[i]);
 		}
 		i++;
 	}
 	va_end(args);
-
 	return (length);
 }
