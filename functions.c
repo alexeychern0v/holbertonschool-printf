@@ -4,6 +4,7 @@
  * print_char - function that print a character
  * @args: argument
  * 
+ * Return: 
 */
 int	print_char(va_list args)
 {
@@ -31,36 +32,49 @@ int	print_string(va_list args)
 
 /**
  * print_integer - function that print a integer
+ * Description : this function print digit wither its a int or decimal
+ * 		its take a argument as parameter
+ * @args : argument
  * 
- * Return: size of the fucntion, otherwise 1
+ * Return: size of the fucntion, otherwise 1§
 */
 int	print_integer(va_list args)
 {
 	int	nb;
+	int	n;
 	int	length;
 	int	value;
+	int	unit;
 
 	length = 0;
-	nb = va_arg(args, int);
-
-	if (nb < 0)
-	{
-		_putchar('-');
-		nb = nb * -1;
-		length++;
-	}
+	value = va_arg(args, int);
 
 	if (nb == 0)
 	{
 		_putchar('0');
-		return (1);
+		length++;
 	}
 
-	while (nb != '\0')
+	if (value < 0)
 	{
-		value = nb % 10;
-		_putchar(value + 48);
-		nb = nb / 10;
+		_putchar('-');
+		n = value * -1;
+		length++;
+	}
+	else
+		n = value;
+
+	nb = n;
+	unit = 1;
+	while (nb > 0)
+	{
+		nb /= 10;
+		unit = unit * 10;
+	}
+	while (unit >= 1)
+	{
+		_putchar(((n / unit) % 10) + '0');
+		unit = unit / 10;
 		length++;
 	}
 
