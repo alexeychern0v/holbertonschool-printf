@@ -4,7 +4,7 @@
  * print_char - function that print a character
  * @args: argument
  * 
- * Return: 
+ * Return: 1
 */
 int	print_char(va_list args)
 {
@@ -14,6 +14,9 @@ int	print_char(va_list args)
 
 /**
  * print_string - function that print a string
+ * Description : this function take in argument a string and print it
+ * 		by using a index named i, in a loop.
+ * @args : argument
  * 
  * Return: the length of the string
 */
@@ -24,7 +27,7 @@ int	print_string(va_list args)
 
 	s = va_arg(args, char *);
 	if (s == NULL)
-		return (1); 
+		return (0); 
 	for (i = 0; s[i]; i++)
 		_putchar(s[i]);
 	return(i);
@@ -49,12 +52,6 @@ int	print_integer(va_list args)
 	length = 0;
 	value = va_arg(args, int);
 
-	if (nb == 0)
-	{
-		_putchar('0');
-		length++;
-	}
-
 	if (value < 0)
 	{
 		_putchar('-');
@@ -66,7 +63,7 @@ int	print_integer(va_list args)
 
 	nb = n;
 	unit = 1;
-	while (nb > 0)
+	while (nb > 9)
 	{
 		nb /= 10;
 		unit = unit * 10;
