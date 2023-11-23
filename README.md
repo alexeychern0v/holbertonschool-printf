@@ -29,8 +29,8 @@ We were allowed to edit files in Vi, Vim or Emacs. Code should pass Betty style
 - va_arg (man 3 va_arg)
 ## Tasks to be accomplished
 1. Write a function that produces output according to a format (GitHub repository: holbertonschool-printf).
-Prototype: int _printf(const char *format, ...);
-Returns: the number of characters printed (excluding the null byte used to end output to strings)
+Prototype: int _printf(const char *format, ...).
+Function must return the number of characters printed (excluding the null byte used to end output to strings).
 Handle the following conversion specifiers:
 - c
 - s
