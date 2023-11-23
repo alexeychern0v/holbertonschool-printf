@@ -29,6 +29,8 @@ We were allowed to edit files in Vi, Vim or Emacs. Code should pass Betty style
 | d | If argument is a decimal function will print a integer (decimal) |
 | i | If argument is a interger function will print integer |
 ##  Flowchart
+![image](https://github.com/AudreyLican/holbertonschool-printf/assets/97944947/03f4ad1c-0c52-41e4-a846-ad6b4c7d205f)
+https://drive.google.com/file/d/1DVVdVqpP1le8nlpMq34fCXRTZmhpz9js/view?usp=drive_link
 ## Authors
 
 - [@Audrey Lican](https://github.com/AudreyLican)
