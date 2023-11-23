@@ -2,8 +2,8 @@
 
 /**
  * print_char - function that print a character
- * @args: argument
- * 
+ * @args: argument list
+ *
  * Return: 1 on success
 */
 int	print_char(va_list args)
@@ -17,10 +17,8 @@ int	print_char(va_list args)
 
 /**
  * print_string - function that print a string
- * Description : this function take in argument a string and print it
- * 		by using a index named i, in a loop.
- * @args : argument
- * 
+ * @args : argument list
+ *
  * Return: the length of the string
 */
 int	print_string(va_list args)
@@ -35,48 +33,49 @@ int	print_string(va_list args)
 
 	for (i = 0; s[i]; i++)
 		_putchar(s[i]);
-	return(i);
+	return (i);
 }
 
 /**
- * print_integer - function that print a integer
- * Description : this function print digit wither its a int or decimal
- * 		its take a argument as parameter
- * @args : argument, number to print
- * 
- * Return: size of the fucntion, otherwise 1§
+ * print_integer - function that print digit (d or i)
+ * @args : argument list
+ *
+ * Return: number of character printed
 */
 int	print_integer(va_list args)
 {
 	int	nb;
 	int	n;
 	int	length;
-	int	value;
 	int	unit;
 
 	length = 0;
-	value = va_arg(args, int);
+	nb = va_arg(args, int);
 
-	if (value < 0)
+	if (nb == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	if (nb < 0)
 	{
 		_putchar('-');
-		n = value * -1;
+		nb = -nb;
 		length++;
 	}
-	else
-		n = value;
 
-	nb = n;
+	n = nb;
 	unit = 1;
-	while (nb > 9)
+	while (n > 9)
 	{
-		nb /= 10;
+		n /= 10;
 		unit = unit * 10;
 	}
 	while (unit >= 1)
 	{
-		_putchar(((n / unit) % 10) + '0');
-		unit = unit / 10;
+		_putchar(((nb / unit) % 10) + '0');
+		unit /= 10;
 		length++;
 	}
 
@@ -85,8 +84,8 @@ int	print_integer(va_list args)
 
 /**
  * print_mod - function that print character '%'
- * @args : given arguments
- * 
+ * @args : arguments list
+ *
  * Return: character '%'
 */
 int	print_mod(va_list args)
