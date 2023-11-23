@@ -52,11 +52,11 @@ int	print_integer(va_list args)
 	length = 0;
 	nb = va_arg(args, int);
 
-	if (nb == 0)
+	/*if (nb == 0)
 	{
 		_putchar('0');
 		return (1);
-	}
+	}*/
 
 	if (nb < 0)
 	{
