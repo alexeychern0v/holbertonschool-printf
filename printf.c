@@ -3,7 +3,7 @@
 /**
  * _printf - function that produces output according to a format
  * @format : string
- * 
+ *
  * Return: number of char printer
 */
 int	_printf(const char *format, ...)

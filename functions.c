@@ -3,7 +3,7 @@
 /**
  * print_char - function that print a character
  * @args: argument
- * 
+ *
  * Return: 1 on success
 */
 int	print_char(va_list args)
@@ -18,9 +18,9 @@ int	print_char(va_list args)
 /**
  * print_string - function that print a string
  * Description : this function take in argument a string and print it
- * 		by using a index named i, in a loop.
+ *		by using a index named i, in a loop.
  * @args : argument
- * 
+ *
  * Return: the length of the string
 */
 int	print_string(va_list args)
@@ -35,15 +35,15 @@ int	print_string(va_list args)
 
 	for (i = 0; s[i]; i++)
 		_putchar(s[i]);
-	return(i);
+	return (i);
 }
 
 /**
  * print_integer - function that print a integer
  * Description : this function print digit wither its a int or decimal
- * 		its take a argument as parameter
+ *		its take a argument as parameter
  * @args : argument, number to print
- * 
+ *
  * Return: size of the fucntion, otherwise 1§
 */
 int	print_integer(va_list args)
@@ -86,7 +86,7 @@ int	print_integer(va_list args)
 /**
  * print_mod - function that print character '%'
  * @args : given arguments
- * 
+ *
  * Return: character '%'
 */
 int	print_mod(va_list args)

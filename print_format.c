@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- * *print_fromat - that will verify each elements 
+ * print_fromat - that will verify each elements
  * @format : elements to check
- * 
  * Return: pointer on function otherwise NULL
 */
 int	(*print_format(const char *format))(va_list)
@@ -21,7 +20,7 @@ int	(*print_format(const char *format))(va_list)
 	for (index = 0; ft[index].e; index++)
 	{
 		if (*format == ft[index].e)
-			return(ft[index].f);
+			return (ft[index].f);
 	}
-	return(ft[5].f);
+	return (ft[5].f);
 }
