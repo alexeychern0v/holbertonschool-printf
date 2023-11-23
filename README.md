@@ -18,6 +18,14 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 We were allowed to edit files in Vi, Vim or Emacs. Code should pass Betty style
 ## Examples of usage (with screenshots)
 ## Man page
+
+| Format     | Description                |
+| :------- | :------------------------- |
+| c | Print char |
+| s | If argument is a string function will print a string. |
+| % | Print a percent |
+| d | If argument is a decimal function will print a integer (decimal) |
+| i | If argument is a interger function will print integer |
 ##  Flowchart
 ## Authors
 
