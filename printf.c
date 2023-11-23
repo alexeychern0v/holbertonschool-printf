@@ -17,23 +17,26 @@ int	_printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
+	i = 0;
 	length = 0;
-	for (i = 0; format[i]; i++)
+	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
 			f = print_format(&format[i + 1]);
 			if (f == NULL)
 			{
-				return (-1);
+				//length += _putchar(format[i]);
+				length += _putchar(format[i + 1]);
+				//length++;
 			}
-			length += f(args);
+			else
+				length += f(args);
 			i++;
 		}
 		else
-		{
-			length += _putchar(format[i]);
-		}
+		length += _putchar(format[i]);
+		i++;
 	}
 	va_end(args);
 	return (length);
