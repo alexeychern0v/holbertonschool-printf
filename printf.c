@@ -15,7 +15,7 @@ int	_printf(const char *format, ...)
 
 	i = 0;
 	va_start(args, format);
-	if (format == NULL || !format[i + 1])
+	if (format == NULL  || !format[i + 1])
 		return (-1);
 
 	length = 0;
@@ -24,7 +24,7 @@ int	_printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1])
 		{
 			f = print_format(&format[i + 1]);
-			
+
 			if (f == NULL)
 			{
 				length += _putchar(format[i]);
