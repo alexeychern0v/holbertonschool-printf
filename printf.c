@@ -3,9 +3,8 @@
 /**
  * _printf - function that produces output according to a format
  * @format : string
- *
- * Return: number of char printer
-*/
+ * Return: number of character printed
+ */
 int	_printf(const char *format, ...)
 {
 	int	length;
@@ -13,20 +12,25 @@ int	_printf(const char *format, ...)
 	va_list	args;
 	int	(*f)(va_list);
 
-	va_start(args, format);
-
 	i = 0;
-	length = 0;
-	if (format == NULL)
+	va_start(args, format);
+	if (format == NULL  || !format[i + 1])
 		return (-1);
-	while (format && format[i])
+
+	length = 0;
+	while (format[i])
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
 			f = print_format(&format[i + 1]);
+
 			if (f == NULL)
-				return (-1);
-			length += f(args);
+			{
+				length += _putchar(format[i]);
+				length += _putchar(format[i + 1]);
+			}
+			else
+				length += f(args);
 			i++;
 		}
 		else

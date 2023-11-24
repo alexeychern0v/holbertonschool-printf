@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_fromat - that will verify each elements
- * @format : elements to check
- * Return: pointer on function otherwise NULL
-*/
+ * *print_format - search for the correct function to execute
+ * @format : character to check for the corresponding format
+ * Return: pointer on function
+ */
 int	(*print_format(const char *format))(va_list)
 {
 	int	index;
@@ -14,7 +14,7 @@ int	(*print_format(const char *format))(va_list)
 			{'%', print_mod},
 			{'d', print_integer},
 			{'i', print_integer},
-			{0, 0}
+			{'\0', NULL}
 		};
 
 	for (index = 0; ft[index].e; index++)

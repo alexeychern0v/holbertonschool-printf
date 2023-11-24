@@ -1,10 +1,7 @@
-_PRINTF(3)
+_PRINTF(3) "2023-11-23" "1.0" "Custom printf man page"
 
 NAME
 		_printf
-
-LIBRARY
-		Library stdlib, stdiolib, stdarg, unistd
 
 SYNOPSIS
 		int _printf(const char *format, ...);
@@ -14,37 +11,48 @@ DESCRIPTION
 		The _printf() write output to stdout, the standard output stream.
 		This fucntion write the ouput, according to a format string that how subsequent arguments.
 
-	Format
-		'c'		return integer or char.
-				write a char.
+		Specifier(format)
+		'c'		Prints a character.
 
-		's'		if argument is a string. Function will print a string.
+		's'		Prints a string.
 
-		'%'		print a percent
+		'%'		Prints a percent sign.
 
-		'd'		if argument is a decimal. Function will print a integer (decimal).
+		'd'		Prints a signed integer.
 
-		'i'		if argument is a interger. Function will print integer.
+		'i'		Print a signed integer.
 
 RETURN VALUES
 		These functions return the number of characters printed. It return a negative value if an errors occurs.
 
 EXAMPLES
-		To print a string, in the form "C is fun !":
+		To print a string, in the form "Hello World":
 		#include "main.h"
 
 		int	main(void)
 		{
-			/*code here*/
+			_printf("Hello World\n");
 		}
 
-		To print a decimal
-		
+		To print a digit "57"
+		#include "main.h"
+
+		int main(void)
+		{
+			_printf("%i", 57);
+		}
 
 COMPILATION
 		Files compile with Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 
 BUGS
+		Report bugs to alexey.Chernov@holbertonstudents.com or audrey.lican@holbertonstudents.com.
 
-AUTHORS
+VERSION
+		1.0
+
+DATE
+		November 23, 2023
+
+AUTHOR
 		Audrey Lican and Alexey Chernov
